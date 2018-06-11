@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-use strict;
+use strict; 
 
 my $PG_VERSION =  substr( `pg_ctl --version | awk '{print \$3}'`, 0, 3 );
 my $HOST_NAME =  `uname -n`; chomp ( $HOST_NAME );
