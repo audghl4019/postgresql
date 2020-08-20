@@ -77,3 +77,15 @@ $$;
 
 -- 테스트 쿼리
 select encode_uri('/search#/?a=1&abc=한글');
+
+                                    
+-- information_schema.columns  테이블을 조회하면 컬럼 정보가 조회 됩니다.
+-- PostgreSql 자체가 소문자로 저장되기 때문에 조건절의 테이블명은 반드시 소문자로 해야합니다. 
+select 	table_name
+	, 	column_name
+	, 	data_type
+	, 	character_maximum_length
+	,	is_nullable
+from     	information_schema.columns 
+where 	table_name = '테이블명'
+order by     ordinal_position
